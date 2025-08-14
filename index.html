@@ -302,11 +302,11 @@
         <!-- Botones CTA en el panel de información -->
         <div class="cta-container">
           <a class="cta-buy" target="_blank" rel="noopener"><span>¡Comprar ahora!</span></a>
-          <a class="btn compare-open cta-view" target="_blank" rel="noopener"><span>Ver ficha completa</span></a>
+          <a class="cta-view" target="_blank" rel="noopener"><span>Ver ficha completa</span></a>
         </div>
         
         <div class="actions">
-          <button class="btn compare-open" type="button">Comparar productos</button>
+          <button class="btn btn-compare" type="button">Comparar productos</button>
         </div>
         <div class="updated-bottom">Última actualización: <span class="updated-date"></span></div>
       </div>
@@ -498,7 +498,6 @@
       const it=state.items.find(x=>x.id===state.selectedId);
       if(!it){ c.innerHTML='<div class="chips">Selecciona una impresora.</div>'; return; }
       const node=renderCard(it);
-      $(".compare-open", node).addEventListener("click", openCompareHub);
       c.appendChild(node);
     }
 
@@ -547,6 +546,10 @@
       const feats=el.querySelector(".features"); feats.innerHTML=""; for(const f of item._features){ const li=document.createElement("li"); li.textContent=f; feats.appendChild(li); }
       el.querySelector(".updated-date").textContent=item.ultima_actualizacion||"—";
       const sug=el.querySelector(".suggestion"); sug.querySelector(".suggestion-text").textContent=item._sugerencia; sug.querySelector(".suggestion-source").textContent=item._sugerencia_source; sug.title=item._sugerencia_source;
+
+      // Botón comparar - ARREGLADO
+      const compareBtn = el.querySelector(".btn-compare");
+      compareBtn.addEventListener("click", () => openCompareHub());
 
       return el;
     }
@@ -688,4 +691,3 @@
   </script>
 </body>
 </html>
-
