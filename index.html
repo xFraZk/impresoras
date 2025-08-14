@@ -97,80 +97,15 @@
     .suggestion{display:flex;align-items:center;gap:.5rem;padding:.35rem .55rem;border:1px solid #223047;border-radius:10px;background:#0c121f;font-size:.9rem}
     .suggestion small{color:var(--muted);font-size:.78rem}
     .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top: 8px;}
-    .updated-bottom{color:var(--muted);font-size:.85rem;margin-top:8px;padding-top:8px;border-top:1px dashed rgba(255,255,255,.1);}
-
-    /* Bubble square image con CTAs arriba y chips debajo */
-    .carousel{position:relative;place-self:center;aspect-ratio:1/1;border-radius:24px;overflow:hidden;
-      background:linear-gradient(#0f1524,#0f1524) padding-box,
-                 linear-gradient(135deg, rgba(122,162,255,.35), rgba(0,255,208,.35)) border-box;
-      border:1px solid transparent; box-shadow:0 10px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.03);
-      width:100%; max-width:var(--img-max); display:grid;place-items:center;padding:6px;
-    }
-    .carousel .stage{position:relative;width:100%;height:100%;border-radius:18px;overflow:hidden}
-    .carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-    .carousel .img-top{z-index:2;clip-path:inset(0 100% 0 0)}
-    @keyframes sliceIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-    .carousel .slice-in{animation:sliceIn .45s ease forwards}
-    .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);background:#0b1324;border:1px solid #223047;border-radius:999px;padding:.25rem .5rem;z-index:3}
-    .carousel .prev{left:.5rem}.carousel .next{right:.5rem}
-    .carousel .indicator{position:absolute;bottom:.45rem;left:50%;transform:translateX(-50%);font-size:.8rem;padding:.1rem .6rem;border:1px solid #223047;border-radius:999px;background:#0b1324;z-index:3}
-
-    /* Chips debajo de la foto */
-    .tags-under{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin-top:8px}
-    .tag{display:inline-flex;padding:.12rem .5rem;border-radius:999px;background:#0f172a;border:1px solid #223047;font-size:.78rem;color:#cfd8ea}
-
-    /* Features a la derecha */
-    .features-panel{border:1px solid #223047;border-radius:12px;background:#0f1524;padding:10px;display:grid;gap:6px;align-content:start}
-    .features-panel h4{margin:0;font-size:.95rem}
-    .features{margin:0 0 .1rem 1.1rem}
-
-    /* HUB de comparación (scroll sólido) */
-    .hub[hidden]{display:none}
-    .hub{position:fixed;inset:0;background:rgba(5,7,10,.7);backdrop-filter:blur(6px);display:grid;place-items:center;z-index:1000}
-    .hub__content{
-      width:min(1200px,96vw);height:min(90vh,1000px);
-      border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow);
-      display:grid;grid-template-rows:auto 1fr;min-height:0;
-    }
-    .hub__head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
-    .pill{background:#0b1324;border:1px solid var(--line);border-radius:999px;padding:.25rem .6rem;font-size:.82rem}
-    .hub__body{display:grid;grid-template-columns:360px 1fr;gap:12px;padding:12px;min-height:0}
-    @media (max-width:960px){.hub__body{grid-template-columns:1fr}}
-    .hub__side{display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:0}
-    .hub__search{padding:.5rem .6rem;background:#0d1422;color:var(--text);border:1px solid #223047;border-radius:10px;width:100%}
-    .hub__list{border:1px solid var(--line);border-radius:12px;background:#0d1117;overflow:auto;min-height:0}
-    .hub__item{display:flex;gap:.5rem;align-items:center;padding:8px;border-bottom:1px dashed rgba(255,255,255,.06)}
-    .hub__item:last-child{border-bottom:0}
-    .hub__main{min-width:0;min-height:0;overflow:auto}
-    .compare-wrap{overflow:auto;border:1px solid var(--line);border-radius: var(--radius);background:#0d1117}
-
-    /* Tabla con colgroup fijo, sticky y sin solaparse (compacta) */
-    table.compare{
-      table-layout:fixed;border-collapse:separate;border-spacing:0;width:max(100%, 720px);
-      transform:translateZ(0);
-    }
-    .compare col.sticky-col{width:210px}
-    .compare col.data-col{width:250px}
-    .compare th,.compare td{border-bottom:1px solid var(--line);padding:.45rem .55rem;vertical-align:top;background:transparent;font-size:.9rem}
-    .compare thead th{position:sticky;top:0;background:#0f1524;z-index:3}
-    .sticky{
-      left:0;z-index:4;border-right:1px solid var(--line);
-      background:#0f1524; background-clip:padding-box;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      box-shadow: 8px 0 12px -8px rgba(0,0,0,.6) inset; /* separación visual */
-    }
-    .is-primary-col{background:var(--primary-col)!important;box-shadow: inset 0 0 0 1px rgba(122,162,255,.35)}
-    .compare tbody tr:nth-child(odd) td:not(.is-primary-col){background:rgba(255,255,255,.01)}
+    .updated-bottom{color:var(--muted);font-size:.85rem;margin-top:4px}
     
-    /* Nuevos estilos para botones mejorados */
+    /* Nuevos estilos para botones CTA en panel de info */
     .cta-container {
       display: flex;
       gap: 10px;
       margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px dashed rgba(255,255,255,.15);
     }
-    .cta-container a {
+    .cta-buy {
       flex: 1;
       text-align: center;
       padding: 12px 16px;
@@ -233,15 +168,73 @@
       position: relative;
       z-index: 1;
     }
-    @keyframes pulseBorder {
-      0% { opacity: 0.8; }
-      50% { opacity: 0.3; }
-      100% { opacity: 0.8; }
-    }
     .cta-buy:hover, .cta-view:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,.5);
     }
+
+    /* Bubble square image con chips debajo */
+    .carousel{position:relative;place-self:center;aspect-ratio:1/1;border-radius:24px;overflow:hidden;
+      background:linear-gradient(#0f1524,#0f1524) padding-box,
+                 linear-gradient(135deg, rgba(122,162,255,.35), rgba(0,255,208,.35)) border-box;
+      border:1px solid transparent; box-shadow:0 10px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.03);
+      width:100%; max-width:var(--img-max); display:grid;place-items:center;padding:6px;
+    }
+    .carousel .stage{position:relative;width:100%;height:100%;border-radius:18px;overflow:hidden}
+    .carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .carousel .img-top{z-index:2;clip-path:inset(0 100% 0 0)}
+    @keyframes sliceIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+    .carousel .slice-in{animation:sliceIn .45s ease forwards}
+    .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);background:#0b1324;border:1px solid #223047;border-radius:999px;padding:.25rem .5rem;z-index:3}
+    .carousel .prev{left:.5rem}.carousel .next{right:.5rem}
+    .carousel .indicator{position:absolute;bottom:.45rem;left:50%;transform:translateX(-50%);font-size:.8rem;padding:.1rem .6rem;border:1px solid #223047;border-radius:999px;background:#0b1324;z-index:3}
+
+    /* Chips debajo de la foto */
+    .tags-under{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin-top:8px}
+    .tag{display:inline-flex;padding:.12rem .5rem;border-radius:999px;background:#0f172a;border:1px solid #223047;font-size:.78rem;color:#cfd8ea}
+
+    /* Features a la derecha */
+    .features-panel{border:1px solid #223047;border-radius:12px;background:#0f1524;padding:10px;display:grid;gap:6px;align-content:start}
+    .features-panel h4{margin:0;font-size:.95rem}
+    .features{margin:0 0 .1rem 1.1rem}
+
+    /* HUB de comparación (scroll sólido) */
+    .hub[hidden]{display:none}
+    .hub{position:fixed;inset:0;background:rgba(5,7,10,.7);backdrop-filter:blur(6px);display:grid;place-items:center;z-index:1000}
+    .hub__content{
+      width:min(1200px,96vw);height:min(90vh,1000px);
+      border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow);
+      display:grid;grid-template-rows:auto 1fr;min-height:0;
+    }
+    .hub__head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+    .pill{background:#0b1324;border:1px solid var(--line);border-radius:999px;padding:.25rem .6rem;font-size:.82rem}
+    .hub__body{display:grid;grid-template-columns:360px 1fr;gap:12px;padding:12px;min-height:0}
+    @media (max-width:960px){.hub__body{grid-template-columns:1fr}}
+    .hub__side{display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;min-height:0}
+    .hub__search{padding:.5rem .6rem;background:#0d1422;color:var(--text);border:1px solid #223047;border-radius:10px;width:100%}
+    .hub__list{border:1px solid var(--line);border-radius:12px;background:#0d1117;overflow:auto;min-height:0}
+    .hub__item{display:flex;gap:.5rem;align-items:center;padding:8px;border-bottom:1px dashed rgba(255,255,255,.06)}
+    .hub__item:last-child{border-bottom:0}
+    .hub__main{min-width:0;min-height:0;overflow:auto}
+    .compare-wrap{overflow:auto;border:1px solid var(--line);border-radius: var(--radius);background:#0d1117}
+
+    /* Tabla con colgroup fijo, sticky y sin solaparse (compacta) */
+    table.compare{
+      table-layout:fixed;border-collapse:separate;border-spacing:0;width:max(100%, 720px);
+      transform:translateZ(0);
+    }
+    .compare col.sticky-col{width:210px}
+    .compare col.data-col{width:250px}
+    .compare th,.compare td{border-bottom:1px solid var(--line);padding:.45rem .55rem;vertical-align:top;background:transparent;font-size:.9rem}
+    .compare thead th{position:sticky;top:0;background:#0f1524;z-index:3}
+    .sticky{
+      left:0;z-index:4;border-right:1px solid var(--line);
+      background:#0f1524; background-clip:padding-box;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      box-shadow: 8px 0 12px -8px rgba(0,0,0,.6) inset; /* separación visual */
+    }
+    .is-primary-col{background:var(--primary-col)!important;box-shadow: inset 0 0 0 1px rgba(122,162,255,.35)}
+    .compare tbody tr:nth-child(odd) td:not(.is-primary-col){background:rgba(255,255,255,.01)}
   </style>
 </head>
 <body>
@@ -305,18 +298,24 @@
           <span class="suggestion-text"></span>
           <small class="suggestion-source"></small>
         </div>
+        
+        <!-- Botones CTA en el panel de información -->
+        <div class="cta-container">
+          <a class="cta-buy" target="_blank" rel="noopener"><span>¡Comprar ahora!</span></a>
+          <a class="cta-view" target="_blank" rel="noopener"><span>Ver ficha completa</span></a>
+        </div>
+        
         <div class="actions">
           <button class="btn compare-open" type="button">Comparar productos</button>
         </div>
         <div class="updated-bottom">Última actualización: <span class="updated-date"></span></div>
       </div>
 
-      <!-- Col 2: imagen cuadrada con CTAs arriba + chips debajo -->
+      <!-- Col 2: imagen cuadrada con chips debajo -->
       <div>
         <div class="carousel" tabindex="0" aria-label="Galería de imágenes" aria-live="polite">
           <div class="stage">
             <img class="img-bottom" alt="" />
-            <img class="img-top" alt="" />
           </div>
           <button class="btn nav prev" type="button" aria-label="Imagen anterior">◀</button>
           <div class="indicator" aria-live="polite" aria-atomic="true">1/1</div>
@@ -330,16 +329,10 @@
         </div>
       </div>
 
-      <!-- Col 3: features + CTAs -->
+      <!-- Col 3: features -->
       <div class="features-panel">
         <h4>Características</h4>
         <ul class="features"></ul>
-        
-        <!-- Nuevo contenedor para botones CTA -->
-        <div class="cta-container">
-          <a class="cta-buy" target="_blank" rel="noopener"><span>¡Comprar ahora!</span></a>
-          <a class="cta-view" target="_blank" rel="noopener"><span>Ver ficha completa</span></a>
-        </div>
       </div>
     </article>
   </template>
@@ -472,14 +465,13 @@
         const li=document.createElement("li"); li.setAttribute("role","button"); li.tabIndex=0; li.dataset.id=it.id;
         if(it.id===state.selectedId) li.setAttribute("aria-current","true");
         
-        // Mini miniatura de imagen
+        // Miniatura con una sola imagen
         const thumb = document.createElement("div");
         thumb.className = "thumbnail";
         const img = document.createElement("img");
         img.src = it._images[0]; // primera imagen
         img.alt = "";
         thumb.appendChild(img);
-        li.appendChild(thumb);
         
         li.innerHTML += `<div>
             <div class="name">${escapeHTML(it.nombre)}</div>
@@ -516,18 +508,15 @@
       // === Carrusel (slice) ===
       const stage=el.querySelector(".stage");
       const imgBottom=el.querySelector(".img-bottom");
-      const imgTop=el.querySelector(".img-top");
       const prev=el.querySelector(".prev"), next=el.querySelector(".next");
       const ind=el.querySelector(".indicator");
       const images=item._images.slice(0,MAX_IMAGES_PER_CARD);
-      let idx=0, activeTop=false;
+      let idx=0;
       const setIndicator=()=> ind.textContent=`${idx+1}/${images.length}`;
       const setImg=(t,src,alt)=>{ t.src=src; t.alt=alt; };
       const show=(index)=>{ idx=(index+images.length)%images.length;
         const src=images[idx]; const alt=`Foto ${idx+1}/${images.length} — ${item.nombre}`;
-        const toAnimate=activeTop?imgBottom:imgTop, under=activeTop?imgTop:imgBottom;
-        setImg(toAnimate,src,alt); toAnimate.classList.remove("slice-in"); void toAnimate.offsetWidth;
-        toAnimate.style.zIndex=2; under.style.zIndex=1; toAnimate.classList.add("slice-in"); activeTop=!activeTop; setIndicator();
+        setImg(imgBottom,src,alt); setIndicator();
       };
       setImg(imgBottom, images[0], `Foto 1/${images.length} — ${item.nombre}`); setIndicator();
       prev.addEventListener("click", ()=>show(idx-1)); next.addEventListener("click", ()=>show(idx+1));
@@ -539,7 +528,7 @@
       el.querySelector(".stock").textContent=({en_stock:"En stock",bajo:"Stock bajo",sin_stock:"Sin stock",bajo_pedido:"Bajo pedido"}[item.stock]||item.stock||"—");
       el.querySelector(".price").textContent=item._precio!=null?formatPrice(item._precio,item.moneda):"";
 
-      // Nuevos botones CTA
+      // Nuevos botones CTA en panel de información
       const linkBuy = el.querySelector(".cta-buy");
       const linkView = el.querySelector(".cta-view");
       if(item.url_producto){ 
@@ -677,11 +666,9 @@
 
     /* ========= Demo fallback ========= */
     const SAMPLE_DATA=[
-      { id:"hp-415", marca:"HP", modelo:"Ink Tank 415", nombre:"", tipo:"inyeccion", descripcion_corta:"Multifunción con Wi-Fi para hogar y tareas escolares.", caracteristicas:"Wi-Fi|Imprime/Escanea/Copia|A4|Tanque de tinta", imagenes:"", precio:"149999", moneda:"ARS", url_producto:"https://example.com/hp-415", stock:"bajo", uso_recomendado:"estudiante", sugerencia_compra:"", ultima_actualizacion:"2025-08-01" },
-      { id:"epson-l3250", marca:"Epson", modelo:"L3250", nombre:"Epson EcoTank L3250", tipo:"multifunción", descripcion_corta:"EcoTank con impresión económica y conectividad móvil.", caracteristicas:"EcoTank|Wi-Fi|Imprime/Escanea/Copia|A4", imagenes:"", precio:"189999", moneda:"ARS", url_producto:"https://example.com/epson-l3250", stock:"en_stock", uso_recomendado:"hogar", sugerencia_compra:"", ultima_actualizacion:"2025-07-20" },
-      { id:"brother-hl-l2370dw", marca:"Brother", modelo:"HL-L2370DW", nombre:"", tipo:"láser", descripcion_corta:"Láser monocromática rápida con dúplex y Wi-Fi.", caracteristicas:"Láser|Dúplex|Wi-Fi|A4|Monocromo", imagenes:"", precio:"214999", moneda:"ARS", url_producto:"https://example.com/brother-hl-l2370dw", stock:"sin_stock", uso_recomendado:"oficina", sugerencia_compra:"", ultima_actualizacion:"2025-08-05" },
-      { id:"canon-pixma-g3020", marca:"Canon", modelo:"PIXMA G3020", nombre:"Canon PIXMA G3020", tipo:"inyección", descripcion_corta:"Multifunción con tanque de tinta integrado y Wi-Fi.", caracteristicas:"Tanque integrado|Wi-Fi|Imprime/Escanea/Copia|A4", imagenes:"", precio:"179999", moneda:"ARS", url_producto:"https://example.com/canon-pixma-g3020", stock:"bajo_pedido", uso_recomendado:"hogar", sugerencia_compra:"", ultima_actualizacion:"2025-08-10" },
-      { id:"xerox-versalink-c7020", marca:"Xerox", modelo:"VersaLink C7020", nombre:"Xerox VersaLink C7020", tipo:"láser color", descripcion_corta:"Impresora láser color profesional para oficina.", caracteristicas:"Láser color|Wi-Fi|Dúplex|A4|Alta velocidad", imagenes:"", precio:"329999", moneda:"ARS", url_producto:"https://example.com/xerox-c7020", stock:"en_stock", uso_recomendado:"oficina", sugerencia_compra:"", ultima_actualizacion:"2025-08-03" }
+      { id:"hp-415", marca:"HP", modelo:"Ink Tank 415", nombre:"", tipo:"inyeccion", descripcion_corta:"Multifunción con Wi-Fi para hogar y tareas escolares.", caracteristicas:"Wi-Fi|Imprime/Escanea/Copia|A4|Tanque de tinta", imagenes:"", precio:"149999", moneda:"ARS", url_producto:"", stock:"bajo", uso_recomendado:"estudiante", sugerencia_compra:"", ultima_actualizacion:"2025-08-01" },
+      { id:"epson-l3250", marca:"Epson", modelo:"L3250", nombre:"Epson EcoTank L3250", tipo:"multifunción", descripcion_corta:"EcoTank con impresión económica y conectividad móvil.", caracteristicas:"EcoTank|Wi-Fi|Imprime/Escanea/Copia|A4", imagenes:"", precio:"189999", moneda:"ARS", url_producto:"", stock:"en_stock", uso_recomendado:"hogar", sugerencia_compra:"", ultima_actualizacion:"2025-07-20" },
+      { id:"brother-hl-l2370dw", marca:"Brother", modelo:"HL-L2370DW", nombre:"", tipo:"láser", descripcion_corta:"Láser monocromática rápida con dúplex y Wi-Fi.", caracteristicas:"Láser|Dúplex|Wi-Fi|A4|Monocromo", imagenes:"", precio:"214999", moneda:"ARS", url_producto:"", stock:"sin_stock", uso_recomendado:"oficina", sugerencia_compra:"", ultima_actualizacion:"2025-08-05" },
     ];
 
     /* ========= Init ========= */
